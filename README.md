@@ -4,6 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This repository contains a basic example of authentication using the package `bcryptjs`. Its purpose is to demonstrate the hashing and salting of passwords, as well as good practices in storing hash values (not plain text passwords, or even encrypted passwords) in a database via `massive`. It also utilizes `express-session` to save the user data of the logged in user.
 
+### Example `.env` file
+```
+SERVER_PORT = 4000
+CONNECTION_STRING = postgres://[username]:[password]@[host]:[port]/[database]?ssl=true
+SESSION_SECRET = mnoiUIvhkjBMjGHIUYGogY879YT&T(&^fiuhkJV>
+```
+
 ### Other Resources
 
 * <a href='https://github.com/DevMountain/web-curriculum/tree/master/unit-6/6.4-node-5'>This lesson plan</a> and its accompanying slide presentation
