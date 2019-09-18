@@ -18,7 +18,8 @@ module.exports = {
     // hash password
     const salt = bcrypt.genSaltSync(10)
     const hash = bcrypt.hashSync(password, salt)
-    const createdUser = await db.create_cust({email, hash_value: hash})
+    const hashId = await db.add_hash([hash])
+    const createdUser = await db.create_cust({email, hash_id: hashId[0].hash_id})
 
     // put user on session
     req.session.user = {id: createdUser[0].cust_id, email: createdUser[0].email}
@@ -28,7 +29,7 @@ module.exports = {
     const db = req.app.get('db')
     const {email, password} = req.body
     // check if email has an account
-    const user = await db.find_user({email})
+    const user = await db.find_hash({email})
     // not found - send message
     if (!user[0]) return res.status(200).send({message: 'Email not found'})
     
