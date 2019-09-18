@@ -40,23 +40,52 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Auth Mini</h1>
-        <p>
-          Email:
-          <input onChange={(e) => this.setState({ emailInput: e.target.value })} type="text" />
-        </p>
-        <p>
-          Password:
-          <input onChange={(e) => this.setState({ passwordInput: e.target.value })} type="text" />
-        </p>
-        <button onClick={() => this.signup()}>Signup</button>
-        <button onClick={() => this.login()}>Login</button>
-        <button onClick={() => this.logout()}>Logout</button>
+        <header className="header">
+          <h1 className="header__title">
+            Authorize <span className="header__title--emphasize">Me</span>
+          </h1>
+        </header>
+        <div className="modal">
+          <p className="modal__field">
+            Email:
+            <input
+              onChange={e => this.setState({ emailInput: e.target.value })}
+              type="text"
+            />
+          </p>
+          <p className="modal__field">
+            Password:
+            <input
+              onChange={e => this.setState({ passwordInput: e.target.value })}
+              type="password"
+            />
+          </p>
+          <div className="modal__button-container">
+            <button
+              className="button--theme-green"
+              onClick={() => this.signup()}
+            >
+              Signup
+            </button>
+            <button
+              className="button--theme-green"
+              onClick={() => this.login()}
+            >
+              Login
+            </button>
+            <button
+              className="button--theme-green"
+              onClick={() => this.logout()}
+            >
+              Logout
+            </button>
+          </div>
+        </div>
         <hr />
-        <p>USER: {JSON.stringify(this.state.user)}</p>
+        <p className="user-info">USER: {JSON.stringify(this.state.user)}</p>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
