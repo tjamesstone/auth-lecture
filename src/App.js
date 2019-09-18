@@ -13,28 +13,15 @@ class App extends React.Component {
   }
 
   async signup() {
-    let res = await axios.post('/api/signup', {
-      email: this.state.emailInput,
-      password: this.state.passwordInput
-    })
-    this.setState({
-      user: res.data.userData
-    })
+    // Code Here
   }
 
   async login() {
-    let res = await axios.post('/api/login', {
-      email: this.state.emailInput,
-      password: this.state.passwordInput
-    })
-    this.setState({
-      user: res.data.userData
-    })
+    // Code Here
   }
 
   async logout() {
-    await axios.get('/api/logout')
-    this.setState({ user: {} })
+    // Code Here
   }
 
   render() {
