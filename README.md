@@ -11,6 +11,9 @@ CONNECTION_STRING = postgres://[username]:[password]@[host]:[port]/[database]?ss
 SESSION_SECRET = mnoiUIvhkjBMjGHIUYGogY879YT&T(&^fiuhkJV>
 ```
 
+### Schema Used:
+The schema used is found in the `seed.sql` file of the `db` folder.
+
 ### Other Resources
 
 * <a href='https://github.com/DevMountain/web-curriculum/tree/master/unit-6/6.4-node-5'>This lesson plan</a> and its accompanying slide presentation

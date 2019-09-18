@@ -33,7 +33,7 @@ class App extends React.Component {
   }
 
   async logout() {
-    let res = await axios.get('/api/logout')
+    await axios.get('/api/logout')
     this.setState({ user: {} })
   }
 
